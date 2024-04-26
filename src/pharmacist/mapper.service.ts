@@ -1,8 +1,7 @@
-import { Injectable } from "@nestjs/common";
-
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class MapperService  {
+export class MapperService {
   dtoToEntity<T, V>(dto: T, entity: V): any {
     const entityKeys = Object.keys(entity);
     for (const key of entityKeys) {
@@ -23,4 +22,3 @@ export class MapperService  {
     return dto;
   }
 }
-

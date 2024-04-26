@@ -1,96 +1,52 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToOne,
-  OneToMany,
-  OneToOne,
-  JoinColumn,
-} from "typeorm";
+// import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity("signup")
-export class PharmacistEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+// @Entity('prescription')
+// export class PrescriptionEntity {
+//   @PrimaryGeneratedColumn()
+//   id: number;
 
-  @Column()
-  name: string;
+//   @Column()
+//   medicationName: string;
 
-  
+//   @Column()
+//   dosage: number;
 
-  @Column({ unique: true })
-  email: string; // Ensure this matches your DTO and service logic
+//   @Column()
+//   prescriptionDate: string;
 
-  @Column({ unique: true })
-  username: string; // Ensure this matches your DTO and service logic
+//   // @ManyToOne(() => PharmacistEntity, (pharmacist) => pharmacist.prescriptions)
+//   // @JoinColumn({ name: 'pharmacist_id' })
+//   // pharmacist: PharmacistEntity;
+// }
 
-  @Column()
-  password: string; // Make sure this is securely managed
-  // Add other necessary columns and decorators
+// @Entity('medication_inventory')
+// export class MedicationInventoryEntity {
+//   @PrimaryGeneratedColumn()
+//   id: number;
 
+//   @Column()
+//   medicationName: string;
 
-  @OneToMany(() => PrescriptionEntity, (prescription) => prescription.pharmacist)
-  prescriptions: PrescriptionEntity[];
+//   @Column()
+//   quantity: number;
 
-  @OneToMany(() => MedicationInventoryEntity, (inventory) => inventory.pharmacist)
-  inventories: MedicationInventoryEntity[];
+//   // @ManyToOne(() => PharmacistEntity, (pharmacist) => pharmacist.inventories)
+//   // @JoinColumn({ name: 'pharmacist_id' })
+//   // pharmacist: PharmacistEntity;
+// }
 
-  @OneToMany(() => MedicationAlertEntity, (alert) => alert.pharmacist)
-  alerts: MedicationAlertEntity[];
+// @Entity('medication_alert')
+// export class MedicationAlertEntity {
+//   @PrimaryGeneratedColumn()
+//   id: number;
 
-}
+//   @Column()
+//   medicationName: string;
 
+//   @Column()
+//   expirationDate: string;
 
-@Entity("prescription")
-export class PrescriptionEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
-  medicationName: string;
-
-  @Column()
-  dosage: number;
-
-  @Column()
-  prescriptionDate: string;
-
-  @ManyToOne(() => PharmacistEntity, (pharmacist) => pharmacist.prescriptions)
-  @JoinColumn({ name: "pharmacist_id" })
-  pharmacist: PharmacistEntity;
-}
-
-@Entity("medication_inventory")
-export class MedicationInventoryEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
-  medicationName: string;
-
-  @Column()
-  quantity: number;
-
-  @ManyToOne(() => PharmacistEntity, (pharmacist) => pharmacist.inventories)
-  @JoinColumn({ name: "pharmacist_id" })
-  pharmacist: PharmacistEntity;
-}
-
-@Entity("medication_alert")
-export class MedicationAlertEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
-  medicationName: string;
-
-  @Column()
-  expirationDate: string;
-
-  @ManyToOne(() => PharmacistEntity, (pharmacist) => pharmacist.alerts)
-  @JoinColumn({ name: "pharmacist_id" })
-  pharmacist: PharmacistEntity;
-}
-
-
-
+//   // @ManyToOne(() => PharmacistEntity, (pharmacist) => pharmacist.alerts)
+//   // @JoinColumn({ name: 'pharmacist_id' })
+//   // pharmacist: PharmacistEntity;
+// }

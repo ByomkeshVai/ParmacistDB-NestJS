@@ -1,19 +1,15 @@
-import { Module } from "@nestjs/common";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { ConfigModule } from "@nestjs/config";
-
-import { PharmacistModule } from "./pharmacist/pharmacist.module";
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
+import { userModule } from './pharmacist/user/user.module';
 //import { MailerModule } from "@nestjs-modules/mailer";
-
-
 
 @Module({
   imports: [
-    
-    PharmacistModule,
-    
+    userModule,
+
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       // type: "postgres",
@@ -26,11 +22,11 @@ import { PharmacistModule } from "./pharmacist/pharmacist.module";
       // autoLoadEntities: true,
       // synchronize: true,
 
-      type: "postgres",
+      type: 'postgres',
       host: 'localhost',
-      port:5432,
+      port: 5432,
       username: 'postgres',
-      password: 'admin',
+      password: '15955',
       database: 'Tele_Pharmacist',
       autoLoadEntities: true,
       synchronize: true,

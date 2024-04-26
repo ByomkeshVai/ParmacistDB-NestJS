@@ -10,8 +10,9 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { LoginDTO, NewPasswordDTO } from '../pharmacist.dto'; // Corrected import path
+
 import { AuthGuard } from './auth.guard';
+import { LoginDTO } from '../user/user.dto';
 
 @Controller('api/pharmacist/auth')
 export class AuthController {

@@ -1,136 +1,116 @@
-import {
-  IsNotEmpty,
-  IsString,
-  IsNumber,
-  // IsArray,
-  IsDate,
-} from 'class-validator';
+// import {
+//   IsNotEmpty,
+//   IsString,
+//   IsNumber,
+//   // IsArray,
+//   IsDate,
+// } from 'class-validator';
 
-// DTOs for Pharmacist Controller
+// // DTOs for Pharmacist Controller
 
-// Pharmacist Authentication
-export class LoginDTO {
-  @IsNotEmpty()
-  @IsString()
-  username: string;
+// // Pharmacist Authentication
 
-  @IsNotEmpty()
-  @IsString()
-  password: string;
-}
+// export class UpdatePharmacistDTO {
+//   @IsString()
+//   name?: string;
 
-export class PharmacistDTO {
-  @IsNotEmpty()
-  @IsString()
-  name: string;
-  email: string;
-  username: string;
-  password: string;
+//   // Add other properties that can be updated
+// }
 
-  // Add other necessary properties
-}
+// //  Prescription Management
+// export class PrescriptionDTO {
+//   @IsNotEmpty()
+//   @IsString()
+//   medicationName: string;
 
-export class UpdatePharmacistDTO {
-  @IsString()
-  name?: string;
+//   @IsNotEmpty()
+//   @IsNumber()
+//   dosage: number;
 
-  // Add other properties that can be updated
-}
+//   @IsNotEmpty()
+//   @IsDate()
+//   prescriptionDate: Date;
 
-//  Prescription Management
-export class PrescriptionDTO {
-  @IsNotEmpty()
-  @IsString()
-  medicationName: string;
+//   // Add more fields as needed for prescription management
+//   @IsNotEmpty()
+//   @IsString()
+//   patientName: string;
 
-  @IsNotEmpty()
-  @IsNumber()
-  dosage: number;
+//   @IsNotEmpty()
+//   @IsString()
+//   physicianName: string;
 
-  @IsNotEmpty()
-  @IsDate()
-  prescriptionDate: Date;
+//   @IsNotEmpty()
+//   @IsString()
+//   instructions: string;
+// }
 
-  // Add more fields as needed for prescription management
-  @IsNotEmpty()
-  @IsString()
-  patientName: string;
+// //  Medication Inventory Management
+// export class MedicationInventoryDTO {
+//   @IsNotEmpty()
+//   @IsString()
+//   medicationName: string;
 
-  @IsNotEmpty()
-  @IsString()
-  physicianName: string;
+//   @IsNotEmpty()
+//   @IsNumber()
+//   quantity: number;
 
-  @IsNotEmpty()
-  @IsString()
-  instructions: string;
-}
+//   // Add more fields as needed for medication inventory management
+//   @IsNotEmpty()
+//   @IsString()
+//   manufacturer: string;
 
-//  Medication Inventory Management
-export class MedicationInventoryDTO {
-  @IsNotEmpty()
-  @IsString()
-  medicationName: string;
+//   @IsNotEmpty()
+//   @IsString()
+//   batchNumber: string;
 
-  @IsNotEmpty()
-  @IsNumber()
-  quantity: number;
+//   @IsNotEmpty()
+//   @IsDate()
+//   expiryDate: Date;
+// }
 
-  // Add more fields as needed for medication inventory management
-  @IsNotEmpty()
-  @IsString()
-  manufacturer: string;
+// //  Medication Alerts
+// export class MedicationAlertDTO {
+//   @IsNotEmpty()
+//   @IsString()
+//   medicationName: string;
 
-  @IsNotEmpty()
-  @IsString()
-  batchNumber: string;
+//   @IsNotEmpty()
+//   @IsDate()
+//   expirationDate: Date;
 
-  @IsNotEmpty()
-  @IsDate()
-  expiryDate: Date;
-}
+//   // Add more fields as needed for medication alerts
+//   @IsNotEmpty()
+//   @IsString()
+//   alertMessage: string;
 
-//  Medication Alerts
-export class MedicationAlertDTO {
-  @IsNotEmpty()
-  @IsString()
-  medicationName: string;
+//   @IsNotEmpty()
+//   @IsString()
+//   alertType: string;
+// }
 
-  @IsNotEmpty()
-  @IsDate()
-  expirationDate: Date;
+// //  Billing and Payments
+// export class BillingDTO {
+//   @IsNotEmpty()
+//   @IsNumber()
+//   amount: number;
 
-  // Add more fields as needed for medication alerts
-  @IsNotEmpty()
-  @IsString()
-  alertMessage: string;
+//   @IsNotEmpty()
+//   @IsString()
+//   description: string;
 
-  @IsNotEmpty()
-  @IsString()
-  alertType: string;
-}
+//   // Add more fields as needed for billing and payments
+//   @IsNotEmpty()
+//   @IsString()
+//   paymentMethod: string;
 
-//  Billing and Payments
-export class BillingDTO {
-  @IsNotEmpty()
-  @IsNumber()
-  amount: number;
+//   @IsNotEmpty()
+//   @IsString()
+//   transactionId: string;
+// }
 
-  @IsNotEmpty()
-  @IsString()
-  description: string;
-
-  // Add more fields as needed for billing and payments
-  @IsNotEmpty()
-  @IsString()
-  paymentMethod: string;
-
-  @IsNotEmpty()
-  @IsString()
-  transactionId: string;
-}
-
-export class NewPasswordDTO {
-  @IsNotEmpty()
-  @IsString()
-  newPassword: string;
-}
+// export class NewPasswordDTO {
+//   @IsNotEmpty()
+//   @IsString()
+//   newPassword: string;
+// }

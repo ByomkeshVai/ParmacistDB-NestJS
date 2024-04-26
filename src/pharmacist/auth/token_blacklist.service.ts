@@ -1,5 +1,5 @@
-import { Injectable, InternalServerErrorException } from "@nestjs/common";
-import { PharmacistService } from "../pharmacist.service";
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { PharmacistService } from '../pharmacist.service';
 
 @Injectable()
 export class TokenBlacklistService {
